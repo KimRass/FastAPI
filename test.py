@@ -1,22 +1,26 @@
+import sys
+sys.path.insert(0, "/Users/jongbeomkim/Desktop/workspace/ML-API")
 import requests
 import requests
 import matplotlib.pyplot as plt
 from datetime import datetime
+import pandas as pd
+
+from app.schemas import PostCreate
 
 BASE_URL = "http://localhost:8000"
 
 
-def test_create_post(title, content):
-    url = f"{BASE_URL}/posts/"
-    data = {"title": title,"content": content}
-    response = requests.post(url, json=data) # `timeout`
-    print(response.json())
+def test_create_post(**kwargs):
+    url = f"{BASE_URL}/post/create_post"
+    resp = requests.post(url, json=kwargs)
+    print(resp.json())
 
 
 def test_read_post(post_id):
     url = f"{BASE_URL}/posts/{post_id}"
-    response = requests.get(url)
-    print(response.json())
+    resp = requests.get(url)
+    print(resp.json())
 
 
 def test_update_post(post_id):
@@ -25,14 +29,14 @@ def test_update_post(post_id):
         "title": "Updated Post Title",
         "content": "Updated content of the post!"
     }
-    response = requests.put(url, json=data)
-    print(response.json())
+    resp = requests.put(url, json=data)
+    print(resp.json())
 
 
 def test_delete_post(post_id):
     url = f"{BASE_URL}/posts/{post_id}"
-    response = requests.delete(url)
-    if response.status_code == 200:
+    resp = requests.delete(url)
+    if resp.status_code == 200:
         print("Post deleted successfully")
     else:
         print("Failed to delete post")
@@ -69,24 +73,28 @@ def visualize_posts(posts):
 
 
 def show_all_posts():
-    url = f"{BASE_URL}/posts/"
-    response = requests.get(url)
-    if response.status_code == 200:
-        posts = response.json()
+    url = f"{BASE_URL}/post/get_all_posts"
+    resp = requests.get(url)
+    if resp.status_code == 200:
+        posts = resp.json()
+        print(posts)
     else:
-        print(f"Failed to retrieve posts. Status code: {response.status_code}")
+        print(f"Failed to retrieve posts. Status code: {resp.status_code}")
         posts = list()
+
     if posts:
-        visualize_posts(posts)
-    else:
-        print("No posts retrieved.")
+        posts_df = pd.DataFrame(
+            posts, columns=("id", "writer", "title", "content", "created_at"),
+        )
+        print(posts_df)
+show_all_posts()
 
 
 if __name__ == "__main__":
-    # Call the function to create a new post
+    writer = "WRITER"
     title = "TITLE3"
     content = "CONTENT1"
-    test_create_post(title=title, content=content)
+    test_create_post(writer=writer, title=title, content=content)
 
     # Call the function to read a specific post (replace post_id with an existing post ID)
     test_read_post(post_id=21)
@@ -99,4 +107,3 @@ if __name__ == "__main__":
 
 
     # Retrieve all posts
-    show_all_posts()
