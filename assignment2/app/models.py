@@ -14,6 +14,7 @@ class DBPost(BASE):
     title = Column(String, nullable=False)
     content = Column(String, nullable=True)
     created_at = Column(DateTime, default=datetime.now)
+    updated_at = Column(DateTime, default=datetime.now)
 
 
 class User(BASE):
@@ -21,6 +22,6 @@ class User(BASE):
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     name = Column(String, nullable=False)
-    signed_on_at = Column(DateTime, default=datetime.now, nullable=False)
+    created_at = Column(DateTime, default=datetime.now, nullable=False)
     # mobile
     # email_addr
