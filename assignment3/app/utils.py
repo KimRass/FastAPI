@@ -6,6 +6,37 @@ from pathlib import Path
 import os
 import numpy as np
 import random
+import re
+from collections import OrderedDict
+
+
+VOC_CLASS_COLOR = {
+    "background": (0, 0, 0),
+    "aeroplane": (128, 0, 0),
+    "bicycle": (0, 128, 0),
+    "bird": (128, 128, 0),
+    "boat": (0, 0, 128),
+    "bottle": (128, 0, 128),
+    "bus": (0, 128, 128),
+    "car": (128, 128, 128),
+    "cat": (64, 0, 0),
+    "chair": (192, 0, 0),
+    "cow": (64, 128, 0),
+    "diningtable": (192, 128, 0),
+    "dog": (64, 0, 128),
+    "horse": (192, 0, 128),
+    "motorbike": (64, 128, 128),
+    "person": (192, 128, 128),
+    "pottedplant": (0, 64, 0),
+    "sheep": (128, 64, 0),
+    "sofa": (0, 192, 0),
+    "train": (128, 192, 0),
+    "tvmonitor": (0, 64, 128),
+    "GRID": (255, 255, 255),
+}
+VOC_CLASSES = list(VOC_CLASS_COLOR.keys())[: -1]
+N_CLASSES = len(VOC_CLASSES)
+VOC_COLORS = list(VOC_CLASS_COLOR.values())
 
 
 def get_device():
@@ -57,3 +88,35 @@ def save_image(image, path):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     to_pil(image).save(str(path), quality=100)
+
+
+def modify_state_dict(state_dict, pattern=r"^module.|^_orig_mod."):
+    new_state_dict = OrderedDict()
+    for old_key, value in state_dict.items():
+        new_key = re.sub(pattern=pattern, repl="", string=old_key)
+        new_state_dict[new_key] = value
+    return new_state_dict
+
+
+def visualize_batched_image(image, n_cols):
+    grid = make_grid(image, nrow=n_cols, normalize=True, pad_value=1)
+    grid = TF.to_pil_image(grid)
+    return grid
+
+
+def visualize_batched_gt(gt, n_cols):
+    """
+    Args:
+        gt: `(b, 1, h, w)` (dtype: `torch.long()`)
+    """
+    gt[gt == 255] = 0
+    grid = make_grid(gt, nrow=n_cols, pad_value=21)
+    grid = Image.fromarray(grid[0].numpy().astype("uint8"), mode="P")
+    grid.putpalette(sum(VOC_COLORS, ()))
+    return grid.convert("RGB")
+
+
+def visualize_batched_image_and_gt(image, gt, n_cols, alpha=0.7):
+    image = visualize_batched_image(image, n_cols=n_cols)
+    gt = visualize_batched_gt(gt, n_cols=n_cols)
+    return Image.blend(image, gt, alpha=alpha)
