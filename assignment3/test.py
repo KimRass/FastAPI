@@ -3,10 +3,9 @@ import torch.nn.functional as F
 import torchvision.transforms.functional as TF
 import requests
 from PIL import Image
-import numpy as np
 import io
 
-from assignment3.DeepLabv3.utils import visualize_batched_gt
+from .DeepLabv3.utils import visualize_batched_gt
 
 BASE_URL = "http://localhost:8000"
 
@@ -46,9 +45,6 @@ def segment(img_path):
 
 
 if __name__ == "__main__":
-    # image = get_generated_image(batch_size=3, nums=[1, 1, 1, 9, 10])
-    # image.show()
-
     img_path = "/Users/jongbeomkim/Desktop/workspace/ML-API/assignment3/resources/107177246-1673454132712-gettyimages-1246154739-AFP_336V8DZ.webp"
     seg_image = segment(img_path)
     seg_image.show()

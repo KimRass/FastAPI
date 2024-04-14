@@ -9,6 +9,13 @@ class PostCreate(BaseModel):
     content: str
 
 
+class PostRead(BaseModel):
+    post_id: Optional[int] = None
+    writer: Optional[str] = None
+    title: Optional[str] = None
+    content: Optional[str] = None
+
+
 class PostUpdate(BaseModel):
     title: Optional[str] = None
     content: Optional[str] = None
