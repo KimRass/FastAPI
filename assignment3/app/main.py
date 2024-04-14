@@ -1,15 +1,17 @@
 import torch
 from fastapi import FastAPI, Response, File, UploadFile
 from fastapi.responses import StreamingResponse
-from fastapi.encoders import jsonable_encoder
 from pathlib import Path
 from PIL import Image
 import cv2
 import numpy as np
 import io
+import sys
 
-from utils import get_device, image_to_grid, modify_state_dict
-from model import ResNet101DeepLabv3
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/"DeepLabv3"))
+
+from assignment3.DeepLabv3.utils import get_device, image_to_grid, modify_state_dict
+from assignment3.DeepLabv3.model import ResNet101DeepLabv3
 from schemas import UserInput
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
@@ -17,7 +19,6 @@ from albumentations.pytorch import ToTensorV2
 app = FastAPI()
 
 RES_DIR = Path(__file__).resolve().parent.parent/"resources"
-# MODEL_PARAMS = RES_DIR/"cwgan_gp_mnist.pth"
 MODEL_PARAMS = "/Users/jongbeomkim/Downloads/deeplabv3_voc2012.pth"
 DEVICE = get_device()
 state_dict = torch.load(str(MODEL_PARAMS), map_location=DEVICE)

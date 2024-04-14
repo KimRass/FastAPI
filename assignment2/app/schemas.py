@@ -1,5 +1,6 @@
 from datetime import datetime
 from pydantic import BaseModel
+from typing import Optional
 
 
 class PostCreate(BaseModel):
@@ -8,15 +9,6 @@ class PostCreate(BaseModel):
     content: str
 
 
-class Post(PostCreate):
-    id: int
-    created_at: datetime
-    updated_at: datetime
-    
-    class Config:
-        from_attributes = True
-
-
 class PostUpdate(BaseModel):
-    title: str
-    content: str
+    title: Optional[str] = None
+    content: Optional[str] = None

@@ -38,13 +38,12 @@ def test_read_posts(**kwargs):
     print(posts_df)
 
 
-def test_update_post(post_id, title, content):
+def test_update_post(post_id, **kwargs):
     """
-    Call the function to update a specific post (replace post_id with an existing post ID).
+    Call the function to update a specific post (replace ttt with an existing post ID).
     """
     url = f"{BASE_URL}/post/{post_id}"
-    data = {"id": post_id, "title": title, "content": content}
-    resp = requests.put(url, json=data)
+    resp = requests.put(url, json={"post_id": post_id, **kwargs})
     print(resp.json())
 
 
@@ -59,9 +58,5 @@ def test_delete_post(post_id):
 
 if __name__ == "__main__":
     test_create_post(writer="WRITER", title="TITLE2", content="CONTENT")
-
     test_read_posts()
-
-    test_update_post(post_id=2, title="NEW TITLE", content="NEW CONTENT")
-
-    test_delete_post(post_id=4)
+    test_update_post(post_id=5, content="COCOCO")
