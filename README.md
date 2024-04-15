@@ -1,6 +1,12 @@
 # 1. Bulletin Board (FastAPI)
 
 ## 1) Cloud
+- AWS의 EC2에서 't2.micro` instance type을 사용했습니다.
+- (저의 경우에는) `ssh -i <KEY_PAIR.pem> ec2-user@ec2-3-141-143-48.us-east-2.compute.amazonaws.com`으로 Instance에 접속이 가능합니다.
+- Inbound rule를 편집해서 8000번 포트를 개방합니다.
+    - <img src="https://github.com/KimRass/FastAPI/assets/67457712/15006ab9-184e-4127-b0a9-a3d8c0317366" width="500">
+- 정상적으로 작동함을 확인할 수 있습니다.
+    - <img src="https://github.com/KimRass/FastAPI/assets/67457712/f931c36d-4e07-4f75-908c-8ae54f099992" width="500">
 
 ## 2) FasiAPI의 장단점과 사용한 이유
 - Pydantic을 통해  데이터 유효성 검사를 할 수 있는데 이점이 편리합니다.
@@ -63,33 +69,18 @@ class DBComment(BASE):
 
 ## 4) Headers and Bodies
 - 게시판 서버 API의 각 HTTP method별 Header와 Body는 다음과 같습니다.
-- `create_user`:
-    - Header: application/json
-    - Body:
-    ```json
-    {
-        "name": "string",
-        "email_addr": "string"
-    }
-    ```
-- `read_users`:
-    - Header: application/json
-    - Body:
-    ```json
-    {
-        "user_id": 0,
-        "name": "string",
-        "email_addr": "string"
-    }
-    ```
-- `update_user`:
-    ```json
-    {
-        "name": "string",
-        "email_addr": "string"
-    }
-    ```
-- `delete_user`:
+
+| `create_user` | `read_users` | `update_user` | `delete_user` |
+|:-:|:-:|:-:|:-:|
+| <img src="https://github.com/KimRass/FastAPI/assets/67457712/2e2f2b65-7996-4fd7-a02d-0b6fac6afe0f" width="400"> | <img src="https://github.com/KimRass/FastAPI/assets/67457712/5d0d82e5-2255-434a-9f16-fb920272e352" width="400"> | <img src="https://github.com/KimRass/FastAPI/assets/67457712/ffa7bbd0-fb43-444e-9b0c-c87e86f82be7" width="400"> | <img src="https://github.com/KimRass/FastAPI/assets/67457712/6fca2cf3-4e08-4cd1-b903-61feb76b70bb" width="400"> |
+
+| `create_post` | `read_posts` | `update_post` | `delete_post` |
+|:-:|:-:|:-:|:-:|
+| <img src="https://github.com/KimRass/FastAPI/assets/67457712/77f43aae-1202-4d4d-b6d4-fb1c3027733f" width="400"> | <img src="https://github.com/KimRass/FastAPI/assets/67457712/10d8238d-ff2a-4d8d-9e04-70943dc52279" width="400"> | <img src="https://github.com/KimRass/FastAPI/assets/67457712/f3ff4860-5e78-4498-ad27-e98797b0518f" width="400"> | <img src="https://github.com/KimRass/FastAPI/assets/67457712/83a12770-a42f-40f9-807d-643eb77740f2" width="400"> |
+
+| `create_comment` | `update_comment` | `delete_comment` |
+|:-:|:-:|:-:|
+| <img src="https://github.com/KimRass/FastAPI/assets/67457712/4439cdb4-714c-4602-8bc6-bf2d37262db0" width="400"> | <img src="https://github.com/KimRass/FastAPI/assets/67457712/06e9d772-5eb5-438e-9a21-cb42e7d18d17" width="400"> | <img src="https://github.com/KimRass/FastAPI/assets/67457712/8ef6e19a-752b-4b35-9d7d-e738d2dd68e8" width="400"> |
 
 ## 5) How to Start Server
 ```sh
@@ -97,7 +88,7 @@ bash run.sh bulletin_board
 ```
 
 ## 6) Logging
-- 게시판 API 서버의 경우 예를 들어 다음과 같은 로그를 'logs.txt'에 기록합니다.
+- 로그를 'logs.txt'에 자동으로 기록합니다.
 ```
 | 2024-04-15 20:11:39 | WARNING | Post not found; `post_id=1` | main.py | create_comment() |
 | 2024-04-15 20:11:53 | INFO | Post created; user_id=1 title='T1' content='C1' | main.py | create_post() |
@@ -123,6 +114,7 @@ bash run.sh bulletin_board
 - ImageNet-1k에 대해 학습시킨 ResNet-101 backbone을 Torchvision에서 가져와 사용했습니다.
 - Loss function은 픽셀별 Cross-entropy의 합입니다.
 - 학습 과정에서 최적의 모델을 선별하기 위해 Validation set에 대해 Pixel IoU를 사용했으며 21개 클래스들에 대해 평균을 구했습니다.
+- CPU 환경에서도 추론이 가능하긴 하지만 느리므로 TorchScript로 변환하는 등의 방법으로 추론 속도를 향상시킬 수 있습니다.
 
 ## 2) How to Start Server
 1. [deeplabv3-voc2012.pt](https://drive.google.com/file/d/1hop_eH6MD-ng7bfg8iS9VW2EGT7_Fm19/view?usp=sharing)를 'instance_segmentation/resources' directory에 위치시킵니다.

@@ -4,10 +4,27 @@ import torchvision.transforms.functional as TF
 import requests
 from PIL import Image
 import io
+import argparse
 
 from .DeepLabv3.utils import visualize_batched_gt
 
-BASE_URL = "http://localhost:8000"
+BASE_URL = "http://3.141.143.48:8000"
+
+
+def get_args():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("--img_path", type=str, required=True)
+    parser.add_argument("--save_path", type=str, required=True)
+
+    args = parser.parse_args()
+
+    args_dict = vars(args)
+    new_args_dict = dict()
+    for k, v in args_dict.items():
+        new_args_dict[k.upper()] = v
+    args = argparse.Namespace(**new_args_dict)
+    return args
 
 
 def postprocess_model_output(out, ori_h, ori_w):
@@ -28,10 +45,8 @@ def segment(img_path):
 
 
 if __name__ == "__main__":
-    img_path = "/Users/jongbeomkim/Desktop/workspace/ML-API/instance_segmentation/resources/dog_horse_person.webp"
-    seg_image = segment(img_path)
-    # seg_image.show()
-
-    Image.blend(Image.open(img_path).convert("RGB"), seg_image, alpha=0.5).save(
-        "/Users/jongbeomkim/Desktop/workspace/ML-API/instance_segmentation/resources/dog_horse_person-seg.jpg"
+    args = get_args()
+    seg_image = segment(args.IMG_PATH)
+    Image.blend(Image.open(args.IMG_PATH).convert("RGB"), seg_image, alpha=0.5).save(
+        args.SAVE_PATH,
     )
