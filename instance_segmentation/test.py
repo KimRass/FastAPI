@@ -18,7 +18,7 @@ def postprocess_model_output(out, ori_h, ori_w):
 
 
 def segment(img_path):
-    url = f"{BASE_URL}/segmentation"
+    url = f"{BASE_URL}/segment"
     resp = requests.post(url, files={"file": open(img_path, mode="rb")})
     out = torch.load(io.BytesIO(resp.content))[None, ...]
     image = Image.open(img_path).convert("RGB")
@@ -28,6 +28,10 @@ def segment(img_path):
 
 
 if __name__ == "__main__":
-    img_path = "/Users/jongbeomkim/Desktop/workspace/ML-API/assignment3/resources/107177246-1673454132712-gettyimages-1246154739-AFP_336V8DZ.webp"
+    img_path = "/Users/jongbeomkim/Desktop/workspace/ML-API/instance_segmentation/resources/dog_horse_person.webp"
     seg_image = segment(img_path)
-    seg_image.show()
+    # seg_image.show()
+
+    Image.blend(Image.open(img_path).convert("RGB"), seg_image, alpha=0.5).save(
+        "/Users/jongbeomkim/Desktop/workspace/ML-API/instance_segmentation/resources/dog_horse_person-seg.jpg"
+    )

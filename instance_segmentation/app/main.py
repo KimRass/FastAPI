@@ -29,8 +29,8 @@ TRANSFORM = VOC2012Dataset.get_val_transform(
 )
 
 
-@app.post("/segmentation")
-async def segmentation(file: UploadFile = File(...)):
+@app.post("/segment")
+async def segment(file: UploadFile = File(...)):
     contents = await file.read()
     image = Image.open(io.BytesIO(contents))
     img = np.array(image)

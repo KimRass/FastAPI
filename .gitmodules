@@ -1,4 +1,4 @@
-[submodule "assignment3/DeepLabv3"]
-	path = assignment3/DeepLabv3
+[submodule "instance_segmentation/DeepLabv3"]
+	path = instance_segmentation/DeepLabv3
 	url = https://github.com/KimRass/DeepLabv3
 	branch = main

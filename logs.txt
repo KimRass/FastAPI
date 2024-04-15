@@ -21,3 +21,42 @@ sdda2@gmail.com | main.py | create_user() |
 | 2024-04-15 16:58:09 | WARNING | Email address already exists!; 'sd23da2@gmail.com' | main.py | update_user() |
 | 2024-04-15 16:58:16 | WARNING | Email address already exists!; 'sd23da2@gmail.com' | main.py | update_user() |
 | 2024-04-15 16:58:23 | WARNING | Email address already exists!; 'sd23da2@gmail.com' | main.py | update_user() |
+| 2024-04-15 19:25:56 | WARNING | Email address already exists!; 'sd23da2@gmail.com' | main.py | create_user() |
+| 2024-04-15 19:25:56 | WARNING | Email address already exists!; 'sd23da2@gmail.com' | main.py | update_user() |
+| 2024-04-15 19:25:58 | WARNING | Email address already exists!; 'sd23da2@gmail.com' | main.py | create_user() |
+| 2024-04-15 19:28:12 | WARNING | Duplicate attribute found!; 'name='Kimdasdd' email_addr='sd23da2@gmail.com'' | main.py | create_user() |
+| 2024-04-15 19:28:47 | WARNING | User not found!; user_id=30 name=None email_addr=None | main.py | read_users() |
+| 2024-04-15 19:29:24 | INFO | Retrieved users; user_id=3 name=None email_addr=None | main.py | read_users() |
+| 2024-04-15 19:29:45 | INFO | Retrieved users.; user_id=3 name=None email_addr=None | main.py | read_users() |
+| 2024-04-15 19:39:30 | WARNING | Failed to update user; `name=None email_addr='sd23da2@gmail.com'` | main.py | update_user() |
+| 2024-04-15 19:40:08 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-15 19:40:21 | WARNING | Failed to update user; `name=None email_addr='sd3da2@gmail.com'` | main.py | update_user() |
+| 2024-04-15 19:40:45 | WARNING | Duplicate attribute found; `name=None email_addr='sd3da2@gmail.com'` | main.py | update_user() |
+| 2024-04-15 19:40:52 | WARNING | User not found; `name=None email_addr='sd3da2@gmail.com'` | main.py | update_user() |
+| 2024-04-15 19:42:06 | WARNING | User not found; `user_id=20` | main.py | delete_user() |
+| 2024-04-15 19:43:31 | WARNING | User not found; `user_id=10` | main.py | create_post() |
+| 2024-04-15 19:44:13 | WARNING | User not found; `user_id=2` | main.py | create_post() |
+| 2024-04-15 19:44:32 | WARNING | User not found; `user_id=2` | main.py | create_post() |
+| 2024-04-15 19:47:29 | WARNING | User not found; `user_id=3` | main.py | create_post() |
+| 2024-04-15 19:47:44 | INFO | User created; name='USER1' email_addr='EMAIL1' | main.py | create_user() |
+| 2024-04-15 19:47:48 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-15 19:48:01 | INFO | Post created; user_id=1 title='T1' content='C1' | main.py | create_post() |
+| 2024-04-15 19:55:35 | WARNING | Post not found; `post_id=30 | main.py | delete_post() |
+| 2024-04-15 19:55:40 | WARNING | Post not found; `post_id=3 | main.py | delete_post() |
+| 2024-04-15 19:55:41 | WARNING | Post not found; `post_id=2 | main.py | delete_post() |
+| 2024-04-15 19:55:43 | WARNING | Post deleted; `post_id=1` | main.py | delete_post() |
+| 2024-04-15 19:58:21 | WARNING | Post not found; title=None content=None | main.py | update_post() |
+| 2024-04-15 20:11:39 | WARNING | Post not found; `post_id=1` | main.py | create_comment() |
+| 2024-04-15 20:11:53 | INFO | Post created; user_id=1 title='T1' content='C1' | main.py | create_post() |
+| 2024-04-15 20:17:31 | INFO | Comment created; user_id=1 post_id=1 content='C1' | main.py | create_comment() |
+| 2024-04-15 20:17:40 | INFO | Comment created; user_id=1 post_id=1 content='C2' | main.py | create_comment() |
+| 2024-04-15 20:19:16 | WARNING | User not found; `name=None email_addr='sd3da2@gmail.com'` | main.py | update_user() |
+| 2024-04-15 20:19:28 | WARNING | User not found; `name=None email_addr='sd3da2@gmail.com'` | main.py | update_user() |
+| 2024-04-15 20:26:21 | WARNING | User not found; `name=None email_addr='sd3da2@gmail.com'` | main.py | update_user() |
+| 2024-04-15 20:26:27 | INFO | User updated; `name=None email_addr='sd3da2@gmail.com'` | main.py | update_user() |
+| 2024-04-15 20:32:04 | INFO | Comment updated; content='C3' | main.py | update_comment() |
+| 2024-04-15 20:34:16 | WARNING | Comment not found; `content='C3'` | main.py | update_comment() |
+| 2024-04-15 20:34:41 | WARNING | Comment not found; `comment_id=3` | main.py | update_comment() |
+| 2024-04-15 20:35:24 | WARNING | Comment not found; `comment_id=3` | main.py | update_comment() |
+| 2024-04-15 20:35:32 | WARNING | Comment not found; `comment_id=20` | main.py | delete_comment() |
+| 2024-04-15 20:35:41 | INFO | Comment deleted; `comment_id=2` | main.py | delete_comment() |

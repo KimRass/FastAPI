@@ -34,3 +34,13 @@ class PostRead(BaseModel):
 class PostUpdate(BaseModel):
     title: Optional[str] = None
     content: Optional[str] = None
+
+
+class CommentCreate(BaseModel):
+    user_id: int
+    post_id: int
+    content: str
+
+
+class CommentUpdate(BaseModel):
+    content: Optional[str] = None
