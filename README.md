@@ -15,6 +15,7 @@
 - 사용한 이유는 전에 Scene text image QC server API를 FastAPI를 사용해 만들었던 업무 경험이 있어 개인적으로 익숙하기 때문입니다.
 
 ## 3) Table Specifications
+- `DBUser`, `DBPost`, `DBComment`는 각각 게시판의 사용자, 게시글, 댓글을 의미합니다.
 ```python
 # 'bulletin_board/app/schemas.py'
 class DBUser(BASE):
@@ -107,7 +108,7 @@ bash run.sh bulletin_board
 
 ```
 
-# 2. Instance Segmentation (FastAPI)
+# 2. Semantic Segmentation (FastAPI)
 
 ## 1) Training
 - [DeepLabv3](https://github.com/KimRass/DeepLabv3)에서 DeepLabv3 ('Rethinking Atrous Convolution for Semantic Image Segmentation')를 직접 구현하고 VOC2012 (10,582 images of 'trainaug')에 대해서 학습시켰습니다.
@@ -121,6 +122,8 @@ bash run.sh bulletin_board
 2. `bash run.sh instance_segmentation`
 
 ## 3) Samples
+- 구글에서 VOC2012의 클래스를 검색하로 하여 적당한 이미지를 가져와 추론시켜보겠습니다.
+
 | 'cat', 'chair' |
 |:-:|
 | <img src="https://github.com/KimRass/DeepLabv3/assets/67457712/21ec8f7b-8d46-4253-929d-eb5e8820469d" width="400"> |
