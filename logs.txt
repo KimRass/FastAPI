@@ -1,0 +1,23 @@
+| 2024-04-15 16:47:00 | WARNING | Email address already exists!:
+sdda2@gmail.com | main.py | create_user() |
+| 2024-04-15 16:47:04 | WARNING | Email address already exists!:
+sdda2@gmail.com | main.py | create_user() |
+| 2024-04-15 16:47:36 | WARNING | Email address already exists!:'sdda2@gmail.com' | main.py | create_user() |
+| 2024-04-15 16:49:54 | WARNING | Email address already exists!; 'sdda2@gmail.com' | main.py | create_user() |
+| 2024-04-15 16:49:58 | INFO | User created; name='Kimdasdd' email_addr='sd23da2@gmail.com' | main.py | create_user() |
+| 2024-04-15 16:51:34 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-15 16:51:46 | INFO | Retrieved users; user_id=3 name=None email_addr=None | main.py | read_users() |
+| 2024-04-15 16:51:55 | INFO | Retrieved users; user_id=30 name=None email_addr=None | main.py | read_users() |
+| 2024-04-15 16:52:07 | INFO | Retrieved users; user_id=30 name=None email_addr=None | main.py | read_users() |
+| 2024-04-15 16:52:19 | INFO | Retrieved users; user_id=30 name=None email_addr=None | main.py | read_users() |
+| 2024-04-15 16:52:41 | INFO | Retrieved users; user_id=30 name=None email_addr=None | main.py | read_users() |
+| 2024-04-15 16:53:00 | WARNING | User not found!; user_id=30 name=None email_addr=None | main.py | read_users() |
+| 2024-04-15 16:55:27 | WARNING | User not found!; name='NEW NAME' email_addr=None | main.py | update_user() |
+| 2024-04-15 16:56:00 | WARNING | Failed to update user; name=None email_addr='sd23da2@gmail.com' | main.py | update_user() |
+| 2024-04-15 16:56:51 | WARNING | Email address already exists!; 'sd23da2@gmail.com' | main.py | update_user() |
+| 2024-04-15 16:57:10 | WARNING | Email address already exists!; 'sd23da2@gmail.com' | main.py | update_user() |
+| 2024-04-15 16:57:18 | WARNING | Email address already exists!; 'sd23da2@gmail.com' | main.py | update_user() |
+| 2024-04-15 16:57:43 | WARNING | Email address already exists!; 'sd23da2@gmail.com' | main.py | update_user() |
+| 2024-04-15 16:58:09 | WARNING | Email address already exists!; 'sd23da2@gmail.com' | main.py | update_user() |
+| 2024-04-15 16:58:16 | WARNING | Email address already exists!; 'sd23da2@gmail.com' | main.py | update_user() |
+| 2024-04-15 16:58:23 | WARNING | Email address already exists!; 'sd23da2@gmail.com' | main.py | update_user() |

@@ -10,23 +10,6 @@ from .DeepLabv3.utils import visualize_batched_gt
 BASE_URL = "http://localhost:8000"
 
 
-def get_generated_image(**kwargs):
-    url = f"{BASE_URL}/mnist/generate_image"
-    try:
-        resp = requests.post(url, json=kwargs)
-        if resp.status_code == 200:
-            return Image.open(io.BytesIO(resp.content))
-        else:
-            print(f"Unexpected HTTP status code:\n{resp.status_code}")
-            return None
-    except requests.RequestException as e:
-        print(f"Request failed:\n{e}")
-        return None
-    except IOError as e:
-        print(f"Error processing image:\n{e}")
-        return None
-
-
 def postprocess_model_output(out, ori_h, ori_w):
     out = F.interpolate(out, size=max(ori_h, ori_w))
     out = TF.center_crop(out, output_size=(ori_w, ori_h))
