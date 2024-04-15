@@ -8,7 +8,7 @@
 - 정상적으로 작동함을 확인할 수 있습니다.
     - <img src="https://github.com/KimRass/FastAPI/assets/67457712/f931c36d-4e07-4f75-908c-8ae54f099992" width="500">
 
-## 2) FasiAPI의 장단점과 사용한 이유
+## 2) FastAPI의 장단점과 사용한 이유
 - Pydantic을 통해  데이터 유효성 검사를 할 수 있는데 이점이 편리합니다.
 - Swagger UI를 사용하여 자동으로 API 문서가 생성됩니다.
 - 비교적 최근에 나온 프레임워크이므로 Django나 Flask와 비교하면 커뮤니티가 작고 자료도 적습니다.
