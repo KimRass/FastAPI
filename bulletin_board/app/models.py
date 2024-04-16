@@ -9,9 +9,7 @@ BASE = declarative_base()
 class DBUser(BASE):
     __tablename__ = "users"
 
-    id = Column(
-        Integer, primary_key=True, unique=True, autoincrement=True, index=True,
-    )
+    id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String, nullable=False)
     email_addr = Column(String, nullable=False, unique=True)
     created_at = Column(DateTime, server_default=func.now(), nullable=True)
@@ -23,7 +21,7 @@ class DBUser(BASE):
 class DBPost(BASE):
     __tablename__ = "posts"
 
-    id = Column(Integer, primary_key=True, unique=True, autoincrement=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     title = Column(String, nullable=False)
     content = Column(String, nullable=True)
@@ -36,13 +34,13 @@ class DBPost(BASE):
     )
 
     writer = relationship("DBUser", back_populates="posts")
-    comments = relationship("DBComment", back_populates="post")
+    comments = relationship("DBComment", back_populates="posts")
 
 
 class DBComment(BASE):
     __tablename__ = "comments"
 
-    id = Column(Integer, primary_key=True, unique=True, autoincrement=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     post_id = Column(Integer, ForeignKey("posts.id"), nullable=False)
     content = Column(String, nullable=True)
