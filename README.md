@@ -15,7 +15,10 @@
 - 사용한 이유는 전에 Scene text image QC server API를 FastAPI를 사용해 만들었던 업무 경험이 있어 개인적으로 익숙하기 때문입니다.
 
 ## 3) Table Specifications
-- `DBUser`, `DBPost`, `DBComment`는 각각 게시판의 사용자, 게시글, 댓글을 의미합니다.
+- `DBUser` (`"users"` table), `DBPost` (`"posts"` table), `DBComment` (`"comments"` table)는 각각 게시판의 사용자, 게시글, 댓글을 의미합니다.
+- `DBUser`와 `DBPost`는 one-to-many 관계입니다.
+- `DBUser`와 `DBComment`는 one-to-many 관계입니다.
+- `DBPost`와 `DBComment`는 one-to-many 관계입니다.
 ```python
 # 'bulletin_board/app/schemas.py'
 class DBUser(BASE):
