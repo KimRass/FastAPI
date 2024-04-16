@@ -9,7 +9,9 @@ BASE = declarative_base()
 class DBUser(BASE):
     __tablename__ = "users"
 
-    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    id = Column(
+        Integer, primary_key=True, unique=True, autoincrement=True, index=True,
+    )
     name = Column(String, nullable=False)
     email_addr = Column(String, nullable=False, unique=True)
     created_at = Column(DateTime, server_default=func.now(), nullable=True)
