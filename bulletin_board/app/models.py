@@ -34,7 +34,7 @@ class DBPost(BASE):
     )
 
     writer = relationship("DBUser", back_populates="posts")
-    comments = relationship("DBComment", back_populates="posts")
+    comments = relationship("DBComment", back_populates="post")
 
 
 class DBComment(BASE):

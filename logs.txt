@@ -60,3 +60,33 @@ sdda2@gmail.com | main.py | create_user() |
 | 2024-04-15 20:35:24 | WARNING | Comment not found; `comment_id=3` | main.py | update_comment() |
 | 2024-04-15 20:35:32 | WARNING | Comment not found; `comment_id=20` | main.py | delete_comment() |
 | 2024-04-15 20:35:41 | INFO | Comment deleted; `comment_id=2` | main.py | delete_comment() |
+| 2024-04-18 15:58:09 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 15:58:24 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 15:58:55 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 15:59:02 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 15:59:18 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:00:06 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:00:07 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:00:18 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:00:21 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:00:21 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:00:40 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:00:52 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:01:16 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:02:03 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:08:56 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:10:41 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:10:42 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:12:22 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:12:30 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:13:30 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:13:32 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:16:51 | WARNING | User not found; `user_id=None name=None email_addr=None` | main.py | read_users() |
+| 2024-04-18 16:16:55 | INFO | User created; name='N4' email_addr='E5' | main.py | create_user() |
+| 2024-04-18 16:21:39 | WARNING | Failed to create user; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:23:55 | WARNING | User not found; `user_id=None name=None email_addr=None` | main.py | read_users() |
+| 2024-04-18 16:24:00 | WARNING | User not found; `user_id=None name=None email_addr=None` | main.py | read_users() |
+| 2024-04-18 16:24:07 | INFO | User created; name='N4' email_addr='E5' | main.py | create_user() |
+| 2024-04-18 16:24:10 | WARNING | Duplicate attribute found; `name='N4' email_addr='E5'` | main.py | create_user() |
+| 2024-04-18 16:24:36 | INFO | User created; name='N4' email_addr='E6' | main.py | create_user() |
+| 2024-04-18 16:24:39 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |

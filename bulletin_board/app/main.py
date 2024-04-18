@@ -15,7 +15,7 @@ from .schemas import (
     CommentCreate,
     CommentUpdate,
 )
-from .models import BASE, DBPost, DBUser, DBComment
+from .models import BASE, DBUser, DBPost, DBComment
 from .db import ENGINE, get_db
 from logger import Logger
 
@@ -44,7 +44,7 @@ async def create_user(user: UserCreate, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail=msg)
     except Exception:
         db.rollback()
-        msg = f"Failed to update user; `{user}`"
+        msg = f"Failed to create user; `{user}`"
         logger.warning(msg)
         raise HTTPException(status_code=500, detail=msg)
 

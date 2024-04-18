@@ -4,7 +4,7 @@ import pandas as pd
 
 pd.options.display.max_columns = 7
 
-BASE_URL = "http://3.141.143.48:8000"
+BASE_URL = "http://localhost:8000"
 
 
 def test_create_user(name, email_addr):
@@ -12,6 +12,7 @@ def test_create_user(name, email_addr):
     data = {"name": name, "email_addr": email_addr}
     resp = requests.post(url, json=data)
     print(resp.json())
+test_create_user(name="N4", email_addr="E6")
 
 
 def users_to_df(users):
@@ -31,6 +32,7 @@ def test_read_users(**kwargs):
     users = resp.json()
     users_df = users_to_df(users)
     print(users_df)
+test_read_users()
 
 
 def test_update_user(user_id, **kwargs):
