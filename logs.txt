@@ -90,3 +90,41 @@ sdda2@gmail.com | main.py | create_user() |
 | 2024-04-18 16:24:10 | WARNING | Duplicate attribute found; `name='N4' email_addr='E5'` | main.py | create_user() |
 | 2024-04-18 16:24:36 | INFO | User created; name='N4' email_addr='E6' | main.py | create_user() |
 | 2024-04-18 16:24:39 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:30:12 | INFO | User created; name='N4' email_addr='E9' | main.py | create_user() |
+| 2024-04-18 16:30:46 | INFO | User created; name='N4' email_addr='E10' | main.py | create_user() |
+| 2024-04-18 16:31:00 | WARNING | Duplicate attribute found; `name='N4' email_addr='E10'` | main.py | create_user() |
+| 2024-04-18 16:31:02 | INFO | User created; name='N4' email_addr='E11' | main.py | create_user() |
+| 2024-04-18 16:31:08 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:31:48 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:31:56 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:32:11 | WARNING | Duplicate attribute found; `name='N5' email_addr='E11'` | main.py | create_user() |
+| 2024-04-18 16:32:13 | INFO | User created; name='N5' email_addr='E12' | main.py | create_user() |
+| 2024-04-18 16:32:16 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:32:56 | WARNING | User not found; `user_id=None name=None email_addr=None` | main.py | read_users() |
+| 2024-04-18 16:32:58 | INFO | User created; name='N5' email_addr='E12' | main.py | create_user() |
+| 2024-04-18 16:33:00 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:33:43 | WARNING | Duplicate attribute found; `name='N5' email_addr='E12'` | main.py | create_user() |
+| 2024-04-18 16:33:43 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:33:47 | INFO | User created; name='N5' email_addr='E13' | main.py | create_user() |
+| 2024-04-18 16:33:47 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:35:57 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:36:02 | WARNING | User not found; `user_id=3 name=None email_addr=None` | main.py | read_users() |
+| 2024-04-18 16:36:30 | INFO | User created; name='N5' email_addr='E14' | main.py | create_user() |
+| 2024-04-18 16:36:30 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:36:40 | INFO | User created; name='N5' email_addr='E14' | main.py | create_user() |
+| 2024-04-18 16:36:40 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:36:51 | WARNING | Duplicate attribute found; `name='N5' email_addr='E14'` | main.py | create_user() |
+| 2024-04-18 16:36:51 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:36:58 | INFO | User created; name='N5' email_addr='E15' | main.py | create_user() |
+| 2024-04-18 16:37:02 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:37:33 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:39:04 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:39:11 | WARNING | Duplicate attribute found; `name='N5' email_addr='E15'` | main.py | create_user() |
+| 2024-04-18 16:39:15 | INFO | User created; name='N5' email_addr='E16' | main.py | create_user() |
+| 2024-04-18 16:39:28 | INFO | User created; name='N5' email_addr='E16' | main.py | create_user() |
+| 2024-04-18 16:39:48 | WARNING | Duplicate attribute found; `name='N5' email_addr='E16'` | main.py | create_user() |
+| 2024-04-18 16:39:51 | INFO | User created; name='N5' email_addr='E20' | main.py | create_user() |
+| 2024-04-18 16:40:29 | INFO | User created; name='N5' email_addr='E21' | main.py | create_user() |
+| 2024-04-18 16:40:31 | WARNING | Duplicate attribute found; `name='N5' email_addr='E21'` | main.py | create_user() |
+| 2024-04-18 16:40:32 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |
+| 2024-04-18 16:40:59 | INFO | Retrieved users; user_id=None name=None email_addr=None | main.py | read_users() |

@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import Optional
+import datetime
 
 
 class UserCreate(BaseModel):

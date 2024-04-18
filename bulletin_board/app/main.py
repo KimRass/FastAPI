@@ -4,6 +4,7 @@ from sqlalchemy import and_
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
 from datetime import datetime
+from typing import List
 
 from .schemas import (
     UserCreate,
@@ -26,7 +27,7 @@ app = FastAPI()
 logger = Logger(out_dir="./").get_logger()
 
 
-@app.post("/users")
+@app.post("/users/create-user")
 async def create_user(user: UserCreate, db: Session = Depends(get_db)):
     try:
         user_dict = jsonable_encoder(user)
@@ -49,7 +50,7 @@ async def create_user(user: UserCreate, db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail=msg)
 
 
-@app.get("/users")
+@app.get("/users/read-users")
 async def read_users(user: UserRead, db: Session = Depends(get_db)):
     query = db.query(DBUser)
     filters = list()

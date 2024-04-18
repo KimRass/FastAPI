@@ -8,11 +8,12 @@ BASE_URL = "http://localhost:8000"
 
 
 def test_create_user(name, email_addr):
-    url = f"{BASE_URL}/users"
+    url = f"{BASE_URL}/users/create-user"
     data = {"name": name, "email_addr": email_addr}
     resp = requests.post(url, json=data)
     print(resp.json())
-test_create_user(name="N4", email_addr="E6")
+test_create_user(name="N5", email_addr="E21")
+test_read_users()
 
 
 def users_to_df(users):
@@ -27,12 +28,11 @@ def users_to_df(users):
 
 
 def test_read_users(**kwargs):
-    url = f"{BASE_URL}/users"
+    url = f"{BASE_URL}/users/read-users"
     resp = requests.get(url, json=kwargs)
     users = resp.json()
     users_df = users_to_df(users)
     print(users_df)
-test_read_users()
 
 
 def test_update_user(user_id, **kwargs):
